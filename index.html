@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>هدية لمروة · a present for marwa</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Parisienne&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient" id="ambient" aria-hidden="true"></div>
+  <main class="stage" id="stage">
+    <section class="phase" id="serveError" hidden>
+      <div class="error-card">
+        <p class="ar">لا بد من فتح هذه الصفحة عبر خادم HTTP، لا من الملف مباشرة. من داخل المجلد:</p>
+        <pre dir="ltr">python -m http.server 8000</pre>
+        <p class="ar">ثم افتح <span dir="ltr">http://localhost:8000/</span></p>
+        <p class="en" lang="en" dir="ltr">this page must be served over http, not opened from disk. run the command above inside the folder, then open http://localhost:8000/</p>
+      </div>
+    </section>
+  </main>
+  <canvas class="fx" id="fx" aria-hidden="true"></canvas>
+  <noscript><p class="error-card">هذه الهدية تحتاج إلى JavaScript · this present needs javascript</p></noscript>
+  <script>
+    // Module scripts never run from file://, so this classic script shows the error instead of a blank page.
+    if (location.protocol === 'file:') document.getElementById('serveError').hidden = false;
+  </script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
